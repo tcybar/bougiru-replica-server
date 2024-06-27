@@ -1,0 +1,10 @@
+services:
+  # ローカルの開発作業環境
+  local-dev:
+    hostname: local-dev                     # ホスト名を明示的に指定
+    build:
+      context: ..                           # プロジェクトのルートディレクトリを指定
+      dockerfile: .devcontainer/Dockerfile  # Dockerfileの指定
+    tty: true                               # コンテナの永続化
+    volumes:
+      - ..:/home/tcybar/workspace           # プロジェクトのルートディレクトリをマウント

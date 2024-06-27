@@ -1,0 +1,27 @@
+# TODO: 全体的になぜその設定にしているのかコメントを追加する
+services:
+  # Google Cloud SQLで同じ設定で作成できるのか確認すること
+  mysql:
+    image: mysql:8.0.37
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      # TODO: 環境変数はenvで設定できるようにしたい
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      TZ: 'Asia/Tokyo'
+    networks:
+      - mysql-network
+  mysql-cli:
+    image: mysql:8.0.37
+    container_name: mysql-cli
+    command: mysql -hmysql -uuser -ppassword db
+    networks:
+      - mysql-network
+
+networks:
+  mysql-network:
+    driver: bridge

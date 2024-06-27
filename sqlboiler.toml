@@ -1,0 +1,10 @@
+[mysql]
+  dbname="db"
+  host="localhost"
+  port=3306
+  user="user"
+  pass="password"
+  sslmode="false"
+
+[sqlite3]
+  dbname="./db/master.db"

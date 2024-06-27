@@ -1,0 +1,75 @@
+{
+    "name": "guild-battle-records-server",                    // 名前（リポジトリ名）
+    "dockerComposeFile": "docker-compose.yaml",               // .devcontainerディレクトリ内のdocker-compose.ymlを指定
+    "service": "local-dev",                                   // 接続するコンテナサービス
+    "remoteUser": "tcybar",                                   // 接続ユーザー
+    "workspaceFolder": "/home/tcybar/workspace",              // 作業ディレクトリ
+
+    // コンテナが正常に開始されるたびに実行されるコマンド
+    // NOTE: コンテナ内でローカル環境のgit configファイルを適用するため。この記述がないと毎回configの設定が必要になる。
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+
+    "postCreateCommand": "direnv allow",                      // コンテナ起動後に実行するコマンド（環境変数を設定する）
+    "features": {
+      "ghcr.io/devcontainers/features/docker-in-docker:2": {} // devcontainer内でdockerコマンドを使うための設定
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "golang.go",  // golangの拡張機能
+          "ms-azuretools.vscode-docker",  // dockerの拡張機能
+          "editorconfig.editorconfig",  // EditorConfig for VS Code: コード整形を行う
+          "mhutchie.git-graph",  // git-graphの拡張機能
+          "github.vscode-github-actions",  // github-actionsの拡張機能
+          "gruntfuggly.todo-tree",  // todo-treeの拡張機能
+          "shardulm94.trailing-spaces",  // trailing-spacesの拡張機能
+          "arjun.swagger-viewer",  // swagger-viewerの拡張機能
+          "42crunch.vscode-openapi",  // openapiの拡張機能
+          "mermade.openapi-lint",  // openapi-lintの拡張機能
+          "ms-vscode.makefile-tools",  // makefile-toolsの拡張機能
+          "redhat.vscode-yaml",  // yamlの拡張機能
+          "hashicorp.terraform",  // terraformの拡張機能
+          "pkief.material-icon-theme",  // Material Icon Theme: ファイルのアイコンを表示する
+          "streetsidesoftware.code-spell-checker",  // code-spell-checker: スペルチェックを行う
+          "humao.rest-client"  // rest-clientの拡張機能
+        ],
+        "settings": {
+          "go.useLanguageServer": true,  // golangのLanguage Server Protocolを有効にする
+
+          // スペルチェックのホワイトリスト
+          "cSpell.words": [
+            "tcybar",
+            "usecase",
+            "infrastracture",
+            "sliceutil",
+            "direnv",
+            "openapi",
+            "devcontainer",
+            "devcontainers",
+
+            // DB関連
+            "InnoDB",
+            "sqlx",
+            "Queryx",
+            "sqlboiler",
+
+            // ライブラリ
+            "mattn",
+
+            // プロジェクト固有
+            "guildapi",
+
+            // VSCode拡張機能
+            "pkief",
+            "humao",
+            "azuretools",
+            "mhutchie",
+            "gruntfuggly",
+            "mermade",
+            "shardulm",
+            "arjun"
+          ]
+        }
+      }
+    }
+  }

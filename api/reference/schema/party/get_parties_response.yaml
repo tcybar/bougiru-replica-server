@@ -1,0 +1,12 @@
+title: パーティ一覧取得APIのレスポンス
+type: object
+properties:
+  party_list:
+    description: パーティリスト
+    type: array
+    items:
+      type: integer
+      format: int32
+      example: 1
+required:
+  - party_list

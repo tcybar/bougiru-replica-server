@@ -1,0 +1,12 @@
+title: 装備一覧取得APIのレスポンス
+type: object
+properties:
+  equipment_list:
+    description: 装備リスト
+    type: array
+    items:
+      type: integer
+      format: int32
+      example: 1
+required:
+  - equipment_list

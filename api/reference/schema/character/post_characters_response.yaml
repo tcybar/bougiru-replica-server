@@ -1,0 +1,12 @@
+title: キャラクター登録APIのレスポンス
+type: object
+properties:
+  character_list:
+    description: キャラクターリスト
+    type: array
+    items:
+      type: integer
+      format: int32
+      example: 1
+required:
+  - character_list

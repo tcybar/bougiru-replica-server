@@ -1,0 +1,12 @@
+title: クエスト一覧取得APIのレスポンス
+type: object
+properties:
+  quest_list:
+    description: クエストリスト
+    type: array
+    items:
+      type: integer
+      format: int32
+      example: 1
+required:
+  - quest_list

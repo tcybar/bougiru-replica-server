@@ -1,0 +1,13 @@
+get:
+  summary: パーティ一覧取得
+  description: パーティ一覧を取得する
+  tags:
+    - party
+  operationId: get-parties
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../../schema/party/get_parties_response.yaml

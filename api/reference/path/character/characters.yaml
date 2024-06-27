@@ -1,0 +1,32 @@
+get:
+  summary: キャラクター一覧取得
+  description: キャラクター一覧を取得する
+  tags:
+    - character
+  operationId: get-characters
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../../schema/character/get_characters_response.yaml
+
+post:
+  summary: キャラクター登録
+  description: キャラクターを登録する
+  tags:
+    - character
+  operationId: post-characters
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../../schema/character/post_characters_request.yaml
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../../schema/character/post_characters_response.yaml

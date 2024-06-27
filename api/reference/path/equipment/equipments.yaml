@@ -1,0 +1,12 @@
+get:
+  summary: 装備一覧取得
+  description: 装備一覧を取得する
+  tags:
+    - equipment
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../../schema/equipment/get_equipments_response.yaml

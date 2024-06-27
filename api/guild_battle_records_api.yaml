@@ -1,0 +1,37 @@
+openapi: 3.0.3
+info:
+  title: ギルド戦記API
+  description: ゲーム「ギルド戦記」で使用するAPIの仕様書です.
+  version: 0.0.1
+servers:
+  - url: http://localhost:5000
+    description: ローカル環境 APIサーバ
+tags:
+  - name: character
+    description: キャラクター関連API
+  - name: equipment
+    description: 装備関連API
+  - name: quest
+    description: クエスト関連API
+  - name: party
+    description: パーティ関連API
+paths:
+  /v1/characters:
+    $ref: ./reference/path/character/characters.yaml
+  /v1/quests:
+    get:
+      summary: クエスト一覧取得
+      description: クエスト一覧を取得する
+      tags:
+        - quest
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./reference/schema/quest/get_quests_response.yaml
+  /v1/equipments:
+    $ref: ./reference/path/equipment/equipments.yaml
+  /v1/parties:
+    $ref: ./reference/path/party/parties.yaml

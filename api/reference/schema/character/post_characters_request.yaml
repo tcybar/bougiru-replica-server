@@ -1,0 +1,10 @@
+title: キャラクター登録APIのリクエスト
+type: object
+properties:
+  character_id:
+    description: キャラクターID
+    type: integer
+    format: int32
+    example: 1
+required:
+  - character_id

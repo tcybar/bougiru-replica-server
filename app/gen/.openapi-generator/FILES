@@ -1,0 +1,16 @@
+guildapi/api.go
+guildapi/api_character.go
+guildapi/api_equipment.go
+guildapi/api_party.go
+guildapi/api_quest.go
+guildapi/error.go
+guildapi/helpers.go
+guildapi/impl.go
+guildapi/logger.go
+guildapi/model_get_characters_response.go
+guildapi/model_get_equipments_response.go
+guildapi/model_get_parties_response.go
+guildapi/model_get_quests_response.go
+guildapi/model_post_characters_request.go
+guildapi/model_post_characters_response.go
+guildapi/routers.go
